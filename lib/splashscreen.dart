@@ -105,9 +105,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     MaterialPageRoute(
                         builder: (content) => const LoginScreen())));
           }
-        }).timeout(const Duration(seconds: 5), onTimeout: () {
-          // Time has run out, do what you wanted to do.
-        });
+        }).timeout(const Duration(seconds: 5), onTimeout: () {});
       } on TimeoutException catch (_) {
         print("Time out");
       }

@@ -45,10 +45,6 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // SvgPicture.asset(
-            //   "assets/images/login.svg",
-            //   height: screenHeight * 0.5,
-            // ),
             SizedBox(
                 height: screenHeight * 0.40,
                 width: screenWidth,
@@ -90,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ? "password must be longer than 5"
                                 : null,
                             obscureText: _passwordVisible,
-                            decoration:  InputDecoration(
+                            decoration: InputDecoration(
                                 labelText: 'Password',
                                 labelStyle: TextStyle(),
                                 icon: Icon(Icons.lock),
@@ -116,8 +112,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Checkbox(
-                              //checkColor: Colors.white,
-                              //activeColor: Colors.red,
                               value: _isChecked,
                               onChanged: (bool? value) {
                                 saveremovepref(value!);
@@ -139,17 +133,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             const SizedBox(
                               width: 3,
                             ),
-                            // MaterialButton(
-                            //   shape: RoundedRectangleBorder(
-                            //       borderRadius: BorderRadius.circular(5.0)),
-                            //   minWidth: screenWidth / 3,
-                            //   height: 50,
-                            //   elevation: 10,
-                            //   onPressed: onLogin,
-                            //   color: Theme.of(context).colorScheme.primary,
-                            //   textColor: Theme.of(context).colorScheme.onError,
-                            //   child: const Text('Login'),
-                            // ),
                             Expanded(
                                 child: ElevatedButton(
                                     onPressed: onLogin,
@@ -159,35 +142,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(
                           height: 14,
                         ),
-                        // const SizedBox(
-                        //   height: 13,
-                        // ),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     GestureDetector(
-                        //       onTap: _goToRegister,
-                        //       child: const Text(
-                        //         "New account?",
-                        //         style: TextStyle(
-                        //           fontSize: 14,
-                        //         ),
-                        //       ),
-                        //     ),
-                        //     const SizedBox(
-                        //       width: 8,
-                        //     ),
-                        //     GestureDetector(
-                        //       onTap: _forgotDialog,
-                        //       child: const Text(
-                        //         "Forgot Password?",
-                        //         style: TextStyle(
-                        //           fontSize: 14,
-                        //         ),
-                        //       ),
-                        //     ),
-                        //   ],
-                        // ),
                       ]),
                     )
                   ]),
@@ -267,9 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 .showSnackBar(const SnackBar(content: Text("Login Failed")));
           }
         }
-      }).timeout(const Duration(seconds: 5), onTimeout: () {
-        // Time has run out, do what you wanted to do.
-      });
+      }).timeout(const Duration(seconds: 5), onTimeout: () {});
     } on TimeoutException catch (_) {
       print("Time out");
     }
@@ -317,15 +269,12 @@ class _LoginScreenState extends State<LoginScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String email = (prefs.getString('email')) ?? '';
     String password = (prefs.getString('pass')) ?? '';
-    
-    
 
     if (_isChecked) {
       setState(() {
         _emailEditingController.text = email;
         _passEditingController.text = password;
         _isChecked = (prefs.getBool('checkbox')) ?? false;
-
       });
     }
   }

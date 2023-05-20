@@ -1,6 +1,4 @@
 import 'package:barterit_app/models/user.dart';
-import 'package:barterit_app/screens/loginscreen.dart';
-import 'package:barterit_app/screens/registrationscreen.dart';
 import 'package:barterit_app/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -93,54 +91,6 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
                 ]),
               ),
             ),
-            // Expanded(
-            //   child: ListView(
-            //     children: [
-            //       Column(
-            //         children: [
-            //           MaterialButton(
-            //             shape: RoundedRectangleBorder(
-            //                 borderRadius: BorderRadius.circular(40.0)),
-
-            //             minWidth: screenWidth / 2,
-            //             height: 30,
-            //             elevation: 10,
-            //             color: Theme.of(context).colorScheme.primary,
-            //             textColor: Theme.of(context).colorScheme.onError,
-            //             //child: const Text('LOGIN'),
-
-            //             onPressed: () {
-            //               Navigator.push(
-            //                   context,
-            //                   MaterialPageRoute(
-            //                       builder: (content) => const LoginScreen()));
-            //             },
-            //             child: const Text("LOGIN"),
-            //           ),
-            //           MaterialButton(
-            //             shape: RoundedRectangleBorder(
-            //                 borderRadius: BorderRadius.circular(40.0)),
-            //             minWidth: screenWidth / 2,
-            //             height: 30,
-            //             elevation: 10,
-            //             color: Theme.of(context).colorScheme.primary,
-            //             textColor: Theme.of(context).colorScheme.onError,
-            //             child: const Text('REGISTRATION'),
-
-            //             onPressed: () {
-            //               Navigator.push(
-            //                   context,
-            //                   MaterialPageRoute(
-            //                       builder: (content) =>
-            //                           const RegistrationScreen()));
-            //             },
-            //             //child: const Text("REGISTRATION"),
-            //           ),
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // ),
           ],
         ),
       ),
@@ -157,7 +107,6 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
           title: Text("Logging out"),
           content: Text("Are your sure?"),
           actions: <Widget>[
-            // usually buttons at the bottom of the dialog
             TextButton(
               child: const Text("Yes"),
               onPressed: () async {
@@ -183,13 +132,5 @@ class _ProfileTabScreenState extends State<ProfileTabScreen> {
         );
       },
     );
-
-    //////////////////
-    // SharedPreferences prefs = await SharedPreferences.getInstance();
-    // await prefs.setString('email', '');
-    // await prefs.setString('pass', '');
-    // print("LOGOUT");
-    // Navigator.pushReplacement(
-    //     context, MaterialPageRoute(builder: (context) => SplashScreen()));
   }
 }

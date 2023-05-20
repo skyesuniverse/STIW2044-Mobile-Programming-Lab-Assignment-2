@@ -4,8 +4,7 @@ import 'package:barterit_app/myconfig.dart';
 import 'package:barterit_app/screens/loginscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -172,7 +171,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           ],
                         )
                       ]),
-                    )
+                    ),
                   ]),
                 ),
               ),
@@ -259,8 +258,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           "email": email,
           "password": passa,
         }).then((response) {
-      print(response.body);
-      print(response.statusCode);
+      //print(response.body);
+      //print(response.statusCode);
 
       var jsondata = jsonDecode(response.body);
       print(jsondata);
